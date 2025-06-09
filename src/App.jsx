@@ -1,34 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [films, setFilms] = useState([]);
+
+  useEffect(() => {
+    const fetchFilms = async () => {
+      try {
+        // TODO there is no ssl certificate for the swapi.dev domain had to disable secure: false in vite.config.js -> must fix!
+        const res = await fetch('/api/api/films/')
+        const data = await res.json();
+        console.log(data); // TODO remove 
+        setFilms(data.results);
+
+      } catch (error) {
+        console.error('Failed to fetch films:', error);
+      }
+    };
+
+    fetchFilms();
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div style={{ padding: '2rem' }}>
+      <h1>Star Wars Films</h1>
+      <ul>
+        {films.map(film => (
+          console.log(film), // TODO remove
+          <li key={film.episode_id}>{film.title}</li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
