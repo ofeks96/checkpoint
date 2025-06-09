@@ -1,0 +1,23 @@
+.card {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #ffe81f;
+  box-shadow: 0 0 12px #ffe81f33;
+  margin: 1rem 0;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cardTitle {
+  color: #ffe81f;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.accordion {
+  background-color: #111;
+  color: #ccc;
+  border-top: 1px solid #333;
+}

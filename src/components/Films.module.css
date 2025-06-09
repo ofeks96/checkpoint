@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  background: radial-gradient(circle at top, #000 0%, #111 100%);
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  background-color: #0d0d0d;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(255, 232, 31, 0.2);
+  color: #f5f5f5;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.title {
+  font-family: 'Orbitron', sans-serif;
+  color: #ffe81f;
+  text-shadow: 1px 1px 2px #000;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cardTitle {
+  font-family: 'Star Jedi', sans-serif;
+}
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
